@@ -19,9 +19,9 @@ public class DirSize {
 	public long getSize() {
 		return size;
 	}
-	
+
 	@Override
 	public String toString() {
-		return directory.getName() + " : " + size/1000000.0 + " MB";
+		return directory.getName() + " : " + size / 1000000.0 + " MB";
 	}
 }
