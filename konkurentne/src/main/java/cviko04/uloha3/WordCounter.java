@@ -13,7 +13,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class WordCounter {
 
-	public static final String START_DIR = "D:\\UPJS\\Kopr\\";
+	public static final String START_DIR = "D:\\UPJS\\2.Rocnik\\ASU";
 	public static final int ANALYZERS_COUNT = 4;
 	public static final int SEARCHERS_COUNT = 4;
 
