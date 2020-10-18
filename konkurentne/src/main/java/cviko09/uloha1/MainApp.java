@@ -1,10 +1,6 @@
 package cviko09.uloha1;
 
-import java.util.List;
-
 import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
@@ -26,17 +22,9 @@ public class MainApp extends Application {
 		primaryStage.setTitle("KOPR editor");
 		primaryStage.show();
 
-		textArea.textProperty().addListener(new ChangeListener<String>() {
-
-			@Override
-			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-				SpellChecker spellChecker = new SpellChecker();
-				final List<SpellChecker.SpellcheckBoundary> kontrola = spellChecker.check(newValue);
-				boolean isOK = kontrola.isEmpty();
-				System.out.println(newValue + " kontrola ok: " + isOK);
-				redGreenPane.setGreenState(isOK);
-			}
-		});
+		SpellCheckerService service = new SpellCheckerService(textArea.textProperty());
+		redGreenPane.greenStateProperty().bind(service.valueProperty());
+		service.start();
 	}
 
 	public static void main(String[] args) {

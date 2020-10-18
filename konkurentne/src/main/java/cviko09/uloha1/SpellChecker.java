@@ -10,7 +10,7 @@ public class SpellChecker {
 
 	public SpellChecker() {
 		incorrectWords.addAll(
-				Arrays.asList("vys√≠", "rokou", "vl√°dov", "bycikel", "cytrus", "leh√°tko", "sluch√°tko", "naviac"));
+				Arrays.asList("vysÌ", "rokou", "vl·dov", "bycikel", "cytrus", "leh·tko", "sluch·tko", "naviac"));
 	}
 
 	public List<SpellcheckBoundary> check(CharSequence text) {
